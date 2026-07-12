@@ -1,0 +1,376 @@
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+    scroll-snap-type:y mandatory;
+
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    background:linear-gradient(
+        180deg,
+        #FFF9F1 0%,
+        #FFF5E7 100%
+    );
+
+    color:#2B2B2B;
+
+    overflow-x:hidden;
+
+}
+
+/* Hide scrollbar */
+
+::-webkit-scrollbar{
+
+    display:none;
+
+}
+
+body{
+
+    -ms-overflow-style:none;
+
+    scrollbar-width:none;
+
+}
+
+/* ===========================
+   SECTION
+=========================== */
+
+section{
+
+    min-height:100vh;
+
+    scroll-snap-align:start;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    text-align:center;
+
+    padding:
+    max(40px,env(safe-area-inset-top))
+    28px
+    max(40px,env(safe-area-inset-bottom));
+
+}
+
+/* ===========================
+   HERO
+=========================== */
+
+.orange-icon{
+
+    font-size:70px;
+
+    margin-bottom:30px;
+
+    animation:float 4s ease-in-out infinite;
+
+}
+
+.hero h1{
+
+    font-size:46px;
+
+    font-weight:800;
+
+    letter-spacing:-2px;
+
+    margin-bottom:18px;
+
+}
+
+.date{
+
+    color:#7B7B7B;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    max-width:320px;
+
+}
+
+/* ===========================
+   Scroll Indicator
+=========================== */
+
+.scroll-indicator{
+
+    margin-top:70px;
+
+    color:#999;
+
+    font-size:15px;
+
+}
+
+.arrow{
+
+    font-size:26px;
+
+    margin-top:10px;
+
+    animation:bounce 2s infinite;
+
+}
+
+/* ===========================
+   COUNTER
+=========================== */
+
+.small-title{
+
+    color:#F28C28;
+
+    text-transform:uppercase;
+
+    letter-spacing:4px;
+
+    font-size:13px;
+
+    margin-bottom:25px;
+
+}
+
+.number{
+
+    font-size:92px;
+
+    color:#F28C28;
+
+    font-weight:800;
+
+    line-height:1;
+
+}
+
+.title{
+
+    margin-top:20px;
+
+    font-size:24px;
+
+    font-weight:600;
+
+    letter-spacing:5px;
+
+    text-transform:uppercase;
+
+    color:#555;
+
+}
+
+.words{
+
+    margin-top:25px;
+
+    max-width:340px;
+
+    color:#888;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+}
+
+/* ===========================
+   ENDING
+=========================== */
+
+.ending h2{
+
+    font-size:40px;
+
+    color:#F28C28;
+
+    margin-bottom:25px;
+
+}
+
+.ending-text{
+
+    max-width:360px;
+
+    line-height:2;
+
+    color:#666;
+
+    font-size:20px;
+
+    margin-bottom:50px;
+
+}
+
+.live-counter{
+
+    font-size:34px;
+
+    color:#F28C28;
+
+    font-weight:700;
+
+}
+
+/* ===========================
+   Animations
+=========================== */
+
+@keyframes float{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-10px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes bounce{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(8px);
+
+}
+
+}
+
+/* ===========================
+   iPhone
+=========================== */
+
+@media(max-width:768px){
+
+.hero h1{
+
+font-size:38px;
+
+}
+
+.orange-icon{
+
+font-size:58px;
+
+}
+
+.number{
+
+font-size:70px;
+
+}
+
+.title{
+
+font-size:18px;
+
+}
+
+.words{
+
+font-size:16px;
+
+max-width:300px;
+
+}
+
+.ending h2{
+
+font-size:30px;
+
+}
+
+.ending-text{
+
+font-size:17px;
+
+}
+
+.live-counter{
+
+font-size:24px;
+
+}
+
+}
+
+/* ===========================
+   Desktop
+=========================== */
+
+@media(min-width:1024px){
+
+.hero h1{
+
+font-size:70px;
+
+}
+
+.orange-icon{
+
+font-size:90px;
+
+}
+
+.number{
+
+font-size:140px;
+
+}
+
+.title{
+
+font-size:32px;
+
+}
+
+.words{
+
+font-size:22px;
+
+max-width:700px;
+
+}
+
+}
