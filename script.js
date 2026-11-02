@@ -1,3 +1,4 @@
+
 // =====================================
 // START DATE
 // =====================================
@@ -116,9 +117,11 @@ function setValue(id, value) {
 
     const el = document.getElementById(id);
 
+    if (!el) return;
+
     const formatted = value.toLocaleString();
 
-    if (el.textContent !== formatted) {
+    if (el.textContent.trim() !== formatted) {
 
         el.style.opacity = 0.3;
 
@@ -135,7 +138,7 @@ function setValue(id, value) {
 }
 
 // =====================================
-// UPDATE
+// UPDATE COUNTER
 // =====================================
 
 function updateCounter() {
@@ -146,19 +149,44 @@ function updateCounter() {
 
     if (diff < 0) return;
 
+    // Total time
+
     const seconds = Math.floor(diff / 1000);
     const minutes = Math.floor(seconds / 60);
     const hours = Math.floor(minutes / 60);
     const days = Math.floor(hours / 24);
 
-    // Numbers
+    // Remaining time
+
+    const remainingHours = hours % 24;
+    const remainingMinutes = minutes % 60;
+    const remainingSeconds = seconds % 60;
+
+    // =====================================
+    // HERO ELAPSED TIME MESSAGE
+    // =====================================
+
+    const elapsedElement = document.getElementById("elapsedTime");
+
+    if (elapsedElement) {
+
+        elapsedElement.textContent =
+            `${days} days, ${remainingHours} hours, ${remainingMinutes} minutes and ${remainingSeconds} seconds`;
+
+    }
+
+    // =====================================
+    // NUMBERS
+    // =====================================
 
     setValue("days", days);
     setValue("hours", hours);
     setValue("minutes", minutes);
     setValue("seconds", seconds);
 
-    // Words
+    // =====================================
+    // NUMBERS TO WORDS
+    // =====================================
 
     document.getElementById("daysWords").textContent =
         numberToWords(days);
@@ -172,13 +200,10 @@ function updateCounter() {
     document.getElementById("secondsWords").textContent =
         numberToWords(seconds);
 
-    // Footer
-
-    document.getElementById("liveTime").textContent =
-        seconds.toLocaleString() + " seconds and counting...";
-
 }
 
+// =====================================
+// START
 // =====================================
 
 updateCounter();
